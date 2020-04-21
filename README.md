@@ -2,6 +2,9 @@
 
 This is port of @jodaiber's [Annotated-WikiExtractor](https://github.com/jodaiber/Annotated-WikiExtractor) which is built upon [Wikipedia Extractor by Medialab](http://medialab.di.unipi.it/wiki/Wikipedia_Extractor).
 
+# Requirements
+
+Supports Python 3 only.
 
 # Usage
 
