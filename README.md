@@ -6,7 +6,13 @@ This is port of @jodaiber's [Annotated-WikiExtractor](https://github.com/jodaibe
 # Usage
 
 ```
-$
+
+$ git clone https://github.com/alvations/rubyslippers.git
+$ cd rubyslippers
+
+# This will take a while...
+$ wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+
 $ mkdir extracted-new
 $ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract.py extracted-new/
 ```
