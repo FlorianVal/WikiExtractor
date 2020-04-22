@@ -26,6 +26,6 @@ $ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract.py extracted-
 
 # Multi-thread.
 $ mkdir extracted-new
-$ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract_parallel.py extracted
+$ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract_parallel.py extracted-new/
 
 ```
