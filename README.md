@@ -7,7 +7,7 @@ This is port of @jodaiber's [Annotated-WikiExtractor](https://github.com/jodaibe
 Supports Python 3 only.
 
 ```
-pip install -U tqdm joblib rapidjson
+pip install -U tqdm joblib python-rapidjson
 ```
 
 # Usage
