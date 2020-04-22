@@ -338,26 +338,37 @@ class WikiExtractor:
                 # Pop out the storage for `this_infobox`
                 this_infobox = []
 
-
             wiki_text.append(line)
 
-        # Convert page texts to single string.
         if wiki_text:
+            return wiki_id, wiki_url, wiki_text, wiki_infoboxes
+
+    def extract(self, page):
+        # Call the parsing function.
+        parsed_page = self.parse(page)
+        if parsed_page:
+            wiki_id, wiki_url, wiki_text, wiki_infoboxes = parsed_page
+
+        # Only returns when wiki_text is non-empty.
+        if parsed_page and wiki_text:
+            # Preparing to process and return the wiki page json.
+            wiki_cats, annotations, infobox_types = [], [], []
+
+            # Extract infobox types.
+            infobox_types = [box.split('\n')[0].partition(' ')[2]
+                             for box in wiki_infoboxes]
+
+            # Convert page texts to single string.
             wiki_text = self.compact(self.clean('\n'.join(wiki_text)))
-
-        wiki_cats, annotations = [], []
-
-        if wiki_text: # Extract the categories.
+            # Extract the categories.
             for match in re.finditer(r"\[\[Category:(.*)\]\]", wiki_text):
                 for cat in match.groups(0):
                     wiki_cats.append(cat.strip().strip('|'))
 
             # Extract the annotations.
-            annotations = self.annotate(wiki_text)
-
-        infobox_types = [box.split('\n')[0].partition(' ')[2] for box in wiki_infoboxes]
-
-        if wiki_text:
+            # Remove the <a href="..."> ... </a>
+            wiki_text, annotations = self.annotate(wiki_text)
+            # Put everything into a serializable dictionary.
             wiki_page =  {'id': wiki_id, 'url': wiki_url, 'text': wiki_text,
                           'categories': wiki_cats, 'infobox_types': infobox_types,
                           'annotations': annotations}
@@ -390,4 +401,4 @@ class WikiExtractor:
         text = re.sub('<a href="([^"]+)">([^>]+)</a>',
                 lambda m: m.group(2), text)
 
-        return annotations
+        return text, annotations
