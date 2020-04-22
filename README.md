@@ -7,7 +7,7 @@ This is port of @jodaiber's [Annotated-WikiExtractor](https://github.com/jodaibe
 Supports Python 3 only.
 
 ```
-pip install -U tqdm joblib
+pip install -U tqdm joblib rapidjson
 ```
 
 # Usage
@@ -26,5 +26,6 @@ $ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract.py extracted-
 
 # Multi-thread.
 $ mkdir extracted-new
-$ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract_parallel.py extracted-new/
+$ bzip2 -dc enwiki-latest-pages-articles.xml.bz2 | python3 extract_parallel.py extracted
+
 ```

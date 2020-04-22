@@ -1,6 +1,6 @@
 
 import sys
-import json
+import rapidjson as json
 
 from joblib import Parallel, delayed
 from tqdm import tqdm

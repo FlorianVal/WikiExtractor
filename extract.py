@@ -1,7 +1,8 @@
 import sys
-import json
+import rapidjson as json
 
 from tqdm import tqdm
+
 
 from rubyslippers import extract_pages_from_dump
 from rubyslippers import WikiExtractor
