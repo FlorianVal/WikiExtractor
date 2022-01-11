@@ -5,8 +5,8 @@ import rapidjson as json
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
-from rubyslippers import extract_pages_from_dump
-from rubyslippers import WikiExtractor
+from WikiExtractor import extract_pages_from_dump
+from WikiExtractor import WikiExtractor
 
 def parallelize_preprocess(func, iterator, processes, progress_bar=False):
     iterator = tqdm(iterator) if progress_bar else iterator

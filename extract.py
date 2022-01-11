@@ -4,8 +4,8 @@ import rapidjson as json
 from tqdm import tqdm
 
 
-from rubyslippers import extract_pages_from_dump
-from rubyslippers import WikiExtractor
+from WikiExtractor import extract_pages_from_dump
+from WikiExtractor import WikiExtractor
 
 we = WikiExtractor('en')
 

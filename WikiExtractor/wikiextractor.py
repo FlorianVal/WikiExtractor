@@ -3,8 +3,8 @@ import re
 import urllib.parse
 from itertools import chain
 
-from rubyslippers.utils import get_wiki_document_url
-from rubyslippers.utils import unescape_xml
+from WikiExtractor.utils import get_wiki_document_url
+from WikiExtractor.utils import unescape_xml
 
 class WikiExtractor:
     GARBAGE_TAGS = ('ref', 'gallery', 'timeline', 'noinclude', 'pre', 'table',

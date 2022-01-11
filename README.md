@@ -14,8 +14,8 @@ pip install -U tqdm joblib python-rapidjson
 
 ```
 
-$ git clone https://github.com/alvations/rubyslippers.git
-$ cd rubyslippers
+$ git clone https://github.com/FlorianVal/WikiExtractor
+$ cd WikiExtractor
 
 # This will take a while...
 $ wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
