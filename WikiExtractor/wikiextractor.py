@@ -350,7 +350,7 @@ class WikiExtractor:
             wiki_id, wiki_url, wiki_text, wiki_infoboxes = parsed_page
 
         # Only returns when wiki_text is non-empty.
-        if parsed_page and wiki_text:
+        if parsed_page and self.compact(self.clean('\n'.join(wiki_text))):
             # Preparing to process and return the wiki page json.
             wiki_cats, annotations, infobox_types = [], [], []
 
